@@ -93,13 +93,14 @@ async function find_charging_stations(origin, destination) {
     document.getElementById('map').src = map_url;
 
     // Aquí es donde obtienes la información de la ruta.
-    const distance = route_data.route.distance;
-    const time = route_data.route.time;
+    const distance = route_data.route.distance.toFixed(2);
+    const timeInSeconds = route_data.route.time;
+    const timeInMinutes = (timeInSeconds / 60).toFixed(2);
 
     // Y aquí es donde muestras esa información en tu página web.
     // Este código asume que tienes dos elementos span con los ids 'distance' y 'time'.
-    document.getElementById('distance').textContent = distance;
-    document.getElementById('time').textContent = time;
+    document.getElementById('distance').textContent = `${distance} millas`;
+    document.getElementById('time').textContent = `${timeInMinutes} minutos`;
 }
 
 async function find_nearby_stations(latlng) {
