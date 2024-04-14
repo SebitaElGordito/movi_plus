@@ -95,7 +95,7 @@ async function find_charging_stations(origin, destination) {
     // Aquí es donde obtienes la información de la ruta.
     const distance = route_data.route.distance.toFixed(2);
     const timeInSeconds = route_data.route.time;
-    const timeInMinutes = (timeInSeconds / 60).toFixed(2);
+    const timeInMinutes = Math.floor(timeInSeconds / 60);
 
     // Y aquí es donde muestras esa información en tu página web.
     // Este código asume que tienes dos elementos span con los ids 'distance' y 'time'.
