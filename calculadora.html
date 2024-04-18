@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Passion+One:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body-calc">
 
     <header class="topheader">
 
@@ -61,20 +61,23 @@
 
     <main>
 
+        <p></p>
+        <br>
+
         <section class="calculadora_viajes" id="calculadora_viajes">
-            <h4 class="titulo__home">Calculadora de Viaje</h4>
+            <h4 class="titulo__calc" id="titulo_calc">Calculadora de Viaje</h4>
             
             <form id="routeForm">
-                <label for="origin">Origen:</label><br>
-                <input type="text" id="origin" name="origin"><br>
-                <label for="destination">Destino:</label><br>
-                <input type="text" id="destination" name="destination"><br>
-                <label for="vehicle_type">Tipo de Vehículo:</label><br>
+                <label id="lab-origin" for="origin">Origen:</label><br>
+                <input type="text" id="origin" name="origin" placeholder="Ingresa tu ubicación"><br>
+                <label id="lab-desti" for="destination">Destino:</label><br>
+                <input type="text" id="destination" name="destination" placeholder="Ingresa tu destino"><br>
+                <label id="lab-vehi" for="vehicle_type">Tipo de Vehículo:</label><br>
                 <select id="vehicle_type" name="vehicle_type">
                     <option value="combustion">Combustión</option>
                     <option value="electric">Eléctrico</option>
                 </select><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Enviar" class="calcular_viaje">
               </form>
               
               <script>
@@ -108,13 +111,29 @@
               </script>
 
             <img id="map" src="" alt="Map">
+
             
-            <p>Distancia: <span id="distance"></span> ...</p>
-            <p>Tiempo: <span id="time"></span> ...</p>
-
-
+            <div class="info-viaje">
+                <h2>Información del Viaje</h2>
+                <p>Origen: <span data-info="origin"></span></p>
+                <p>Destino: <span data-info="destination"></span></p>
+                <p>Distancia: <span data-info="distance"></span> km</p>
+                <p>Tiempo estimado: <span data-info="timeInMinutes"></span> minutos</p>
+                <p>Costo estimado: Calculado según tarifa</p>
+                <p>Huella de carbono: <span data-info="carbonFootprint"></span> kg CO2</p>
+            </div>
+            <div class="info-conductor">
+                <h2>Información del Conductor</h2>
+                <p>Nombre: <span data-info="driverName"></span></p>
+                <p>Calificación: <span data-info="driverRating"></span></p>
+            </div>
+            <div id="foto"><img src="" alt="Foto del Conductor" data-info="driverPhoto" style="width:90px; height:auto;"></div>
+            <div class="info-vehiculo">
+                <h2>Información del Vehículo</h2>
+                <p>Tipo: <span data-info="vehicleType"></span></p>
+                <p>Matrícula: <span data-info="vehicleLicense"></span></p>
+            </div>
         </section>
-
 
     </main>
 
