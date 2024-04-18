@@ -59,39 +59,60 @@
 
     </header>
 
-    <img class="banner" src="imagenes/banner.png" id="home">
+    <main>
 
-    <div class="nombre__apellido">
-        <h1 class="presentacion">MoviPlus</h1>
-        <h3 class="carrera"><em>Driving Towards the Future</em></h3>
-    </div>
-
-    <main id="main-index">
-
-
-        <section class="perfil">
-
-            <h2 class="titulo__home">¿Quienes somos?...</h2>
-
-            <img class="corriendo" src="imagenes/taxi9.jpg" alt="taxis en la ciudad">
-
-            <p> MoviPlus es una empresa líder en el transporte de personas, con 15 años de trayectoria en los Estados Unidos. Actualmente, nos dedicamos al traslado de personas con una confortable flota de modernos autobuses. Sin embargo, estamos listos para expandir nuestro servicio al mercado de los taxis en Nueva York. Con esta iniciativa, MoviPlus busca ofrecer a sus clientes una forma rápida, segura y eficiente de trasladarse por la ciudad, al tiempo que contribuye a la protección del medio ambiente. Con un enfoque en la "excelencia en movimiento", nos esforzamos por brindar un servicio de transporte de calidad, cuidando el bienestar de nuestros pasajeros y el entorno en el que operamos.</p>                
-                
-            <br>
-
-            <img class="bicicleta" src="imagenes/taxi10.jpg" alt="taxis en la ciudad">
-
-            <br>
-            <br>
+        <section class="calculadora_viajes" id="calculadora_viajes">
+            <h4 class="titulo__home">Calculadora de Viaje</h4>
             
-            <img class="corriendo2" src="imagenes/taxi12.jpg" alt="taxis en la ciudad">
+            <form id="routeForm">
+                <label for="origin">Origen:</label><br>
+                <input type="text" id="origin" name="origin"><br>
+                <label for="destination">Destino:</label><br>
+                <input type="text" id="destination" name="destination"><br>
+                <label for="vehicle_type">Tipo de Vehículo:</label><br>
+                <select id="vehicle_type" name="vehicle_type">
+                    <option value="combustion">Combustión</option>
+                    <option value="electric">Eléctrico</option>
+                </select><br>
+                <input type="submit" value="Submit">
+              </form>
+              
+              <script>
+              document.getElementById('routeForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+              
+                var origin = document.getElementById('origin').value;
+                var destination = document.getElementById('destination').value;
+                var vehicle_type = document.getElementById('vehicle_type').value;
+              
+                fetch('http://localhost:5000/route', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    origin: origin,
+                    destination: destination,
+                    vehicle_type: vehicle_type,
+                  }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                  console.log('Success:', data);
+                  // Aquí puedes actualizar tu página web con los datos recibidos.
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                });
+              });
+              </script>
 
-            <p> En MoviPlus, somos conscientes de la creciente tendencia mundial hacia la adopción de tecnologías más limpias y sostenibles, por lo que estamos decididos a liderar el cambio en la industria del transporte. Como parte de este compromiso, la empresa planea integrar autos eléctricos a su flota, en consonancia con nuestra visión de promover la movilidad sostenible y la protección del medio ambiente. MoviPlus entendemos que, aunque los vehículos eléctricos todavía dejan una huella de carbono considerable, su incorporación representa un paso crucial hacia la reducción de la contaminación atmosférica y sonora en la bulliciosa ciudad de Nueva York. Este cambio no solo ayudará a mejorar la calidad del aire, sino que también contribuirá a la creación de un entorno urbano más tranquilo y habitable. MoviPlus ve este cambio como un primer paso importante hacia un futuro más sostenible y nos comprometemos a seguir explorando formas de minimizar nuestro impacto en el medio ambiente, mientras continuamos ofreciendo un servicio de transporte de alta calidad a nuestros clientes.</p>
-
-
+            <img id="map" src="" alt="Map">
             
+            <p>Distancia: <span id="distance"></span> ...</p>
+            <p>Tiempo: <span id="time"></span> ...</p>
 
-            
+
         </section>
 
 

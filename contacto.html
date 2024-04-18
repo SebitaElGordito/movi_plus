@@ -59,39 +59,31 @@
 
     </header>
 
-    <img class="banner" src="imagenes/banner.png" id="home">
-
-    <div class="nombre__apellido">
-        <h1 class="presentacion">MoviPlus</h1>
-        <h3 class="carrera"><em>Driving Towards the Future</em></h3>
-    </div>
-
-    <main id="main-index">
+    <main>
 
 
-        <section class="perfil">
+        <section class="contacto" id="contact">
 
-            <h2 class="titulo__home">¿Quienes somos?...</h2>
+            <h5 class="titulo__home titulo__home-contacto">Contacto</h5>
 
-            <img class="corriendo" src="imagenes/taxi9.jpg" alt="taxis en la ciudad">
+            <form class="contacto__formulario" name="contact" netlify>
+                <label for="nombreyapellido">Nombre y/o empresa</label>
+                <input type="text" id="nombreyapellido" class="input__padron" required>
 
-            <p> MoviPlus es una empresa líder en el transporte de personas, con 15 años de trayectoria en los Estados Unidos. Actualmente, nos dedicamos al traslado de personas con una confortable flota de modernos autobuses. Sin embargo, estamos listos para expandir nuestro servicio al mercado de los taxis en Nueva York. Con esta iniciativa, MoviPlus busca ofrecer a sus clientes una forma rápida, segura y eficiente de trasladarse por la ciudad, al tiempo que contribuye a la protección del medio ambiente. Con un enfoque en la "excelencia en movimiento", nos esforzamos por brindar un servicio de transporte de calidad, cuidando el bienestar de nuestros pasajeros y el entorno en el que operamos.</p>                
-                
-            <br>
+                <label for="correoelectronico">Correo Electrónico</label>
+                <input type="email" id="correoelectronico" class="input__padron" required
+                    placeholder="email@dominio.com">
 
-            <img class="bicicleta" src="imagenes/taxi10.jpg" alt="taxis en la ciudad">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" class="input__padron" required>
 
-            <br>
-            <br>
-            
-            <img class="corriendo2" src="imagenes/taxi12.jpg" alt="taxis en la ciudad">
+                <label for="mensaje">Deje su mensaje y con gusto le responderemos.</label>
+                <textarea cols="70" rows="10" id="mensaje" class="input__padron" required></textarea>
 
-            <p> En MoviPlus, somos conscientes de la creciente tendencia mundial hacia la adopción de tecnologías más limpias y sostenibles, por lo que estamos decididos a liderar el cambio en la industria del transporte. Como parte de este compromiso, la empresa planea integrar autos eléctricos a su flota, en consonancia con nuestra visión de promover la movilidad sostenible y la protección del medio ambiente. MoviPlus entendemos que, aunque los vehículos eléctricos todavía dejan una huella de carbono considerable, su incorporación representa un paso crucial hacia la reducción de la contaminación atmosférica y sonora en la bulliciosa ciudad de Nueva York. Este cambio no solo ayudará a mejorar la calidad del aire, sino que también contribuirá a la creación de un entorno urbano más tranquilo y habitable. MoviPlus ve este cambio como un primer paso importante hacia un futuro más sostenible y nos comprometemos a seguir explorando formas de minimizar nuestro impacto en el medio ambiente, mientras continuamos ofreciendo un servicio de transporte de alta calidad a nuestros clientes.</p>
+                <input type="submit" value="Enviar Formulario" class="enviar">
 
+            </form>
 
-            
-
-            
         </section>
 
 
