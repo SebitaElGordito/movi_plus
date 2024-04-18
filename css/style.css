@@ -259,7 +259,7 @@ nav a:hover{
     grid-column:1/6;
     grid-row:1/2;
     font-family: 'Noto Serif Ahom', serif;
-    text-align: center;
+    color: #5f4103;
     font-size: 3em;
     margin: 0.7em 0 0.7em;
     font-weight: 800;
