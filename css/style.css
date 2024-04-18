@@ -688,7 +688,38 @@ footer{
 }
 
 /* Media queries para asegurar la responsividad */
+
 @media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Reduce el tamaño de la fuente base */
+    }
+
+    .topnav, .menu {
+        flex-direction: column; /* Cambia la dirección de las barras de navegación */
+    }
+
+    .nombre__apellido, .presentacion, .carrera {
+        font-size: 1.5em; /* Reduce el tamaño de la fuente para adaptarse a pantallas más pequeñas */
+    }
+
+    .menu li {
+        padding: 8px; /* Aumenta el padding para facilitar la interacción táctil */
+    }
+
+    .calculadora_viajes {
+        grid-template-columns: 1fr; /* Cambia la disposición de la cuadrícula para una columna */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    #routeForm, .info-viaje, .info-conductor, .info-vehiculo {
+        font-size: 16px; /* Ajusta el tamaño de la fuente para mejorar la legibilidad */
+        grid-column: 1 / -1; /* Extiende los componentes para ocupar todo el ancho disponible */
+    }
+
+    .corriendo, .corriendo2 {
+        width: 100%; /* Ajusta el ancho de las imágenes para que ocupen todo el ancho disponible */
+    }
+    
     .calculadora_viajes {
         padding: 15px;
     }
@@ -701,6 +732,18 @@ footer{
 }
 
 @media (max-width: 480px) {
+    .nombre__apellido, .presentacion, .carrera {
+        font-size: 1.2em; /* Reduce aún más el tamaño de la fuente para pantallas muy pequeñas */
+    }
+
+    .menu {
+        font-size: 18px; /* Reduce el tamaño de la fuente del menú para ahorrar espacio */
+    }
+
+    .banner, .perfil p {
+        font-size: 14px; /* Ajusta el tamaño de la fuente en los banners y perfiles */
+    }
+
     .calculadora_viajes {
         padding: 10px;
     }
