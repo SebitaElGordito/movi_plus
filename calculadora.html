@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -75,7 +76,7 @@
                 <label id="lab-vehi" for="vehicle_type">Tipo de Vehículo:</label><br>
                 <select id="vehicle_type" name="vehicle_type">
                     <option value="combustion">Combustión</option>
-                    <option value="electric">Eléctrico</option>
+                    <option value="electrico">Eléctrico</option>
                 </select><br>
                 <input type="submit" value="Enviar" class="calcular_viaje">
               </form>
@@ -110,28 +111,28 @@
               });
               </script>
 
-            <img id="map" src="" alt="Map">
+            <div id="map"></div>
 
             
             <div class="info-viaje">
                 <h2>Información del Viaje</h2>
-                <p>Origen: <span data-info="origin"></span></p>
-                <p>Destino: <span data-info="destination"></span></p>
-                <p>Distancia: <span data-info="distance"></span> km</p>
-                <p>Tiempo Estimado: <span data-info="timeInMinutes"></span> minutos</p>
-                <p>Costo Estimado: Calculado según tarifa</p>
-                <p>Huella de Carbono: <span data-info="carbonFootprint"></span> kg CO2</p>
+                <p>ORIGEN: <span data-info="origin"></span></p>
+                <p>DESTINO: <span data-info="destination"></span></p>
+                <p>DISTANCIA: <span data-info="distance"></span> km</p>
+                <p>TIEMPO ESTIMADO: <span data-info="timeInMinutes"></span></p>
+                <p>COSTO ESTIMADO: Calculado según tarifa</p>
+                <p>HUELLA DE CARBONO: <span data-info="carbonFootprint"></span> kg CO2</p>
             </div>
             <div class="info-conductor">
                 <h2>Información del Conductor</h2>
-                <p>Nombre: <span data-info="driverName"></span></p>
-                <p>Calificación: <span data-info="driverRating"></span></p>
+                <p>NOMBRE: <span data-info="driverName"></span></p>
+                <p>CALIFICACIÓN: <span data-info="driverRating"></span></p>
             </div>
             <div id="foto"><img src="" alt="Foto del Conductor" data-info="driverPhoto" style="width:90px; height:auto;"></div>
             <div class="info-vehiculo">
                 <h2>Información del Vehículo</h2>
-                <p>Tipo: <span data-info="vehicleType"></span></p>
-                <p>Matrícula: <span data-info="vehicleLicense"></span></p>
+                <p>TIPO: <span data-info="vehicleType"></span></p>
+                <p>MATRÍCULA: <span data-info="vehicleLicense"></span></p>
             </div>
         </section>
 
@@ -162,4 +163,5 @@
 </body>
 
 <script defer src="js/app.js"></script>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 </html>

@@ -238,7 +238,7 @@ nav a:hover{
 }
 
 .calculadora_viajes {
-    background: url(../imagenes/taxi1.jpg);
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../imagenes/taxi1.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
@@ -259,7 +259,7 @@ nav a:hover{
     grid-column:1/6;
     grid-row:1/2;
     font-family: 'Noto Serif Ahom', serif;
-    color: #5f4103;
+    color: #000000;
     font-size: 3em;
     margin: 0.7em 0 0.7em;
     font-weight: 800;
