@@ -104,6 +104,8 @@ async function find_charging_stations(origin, destination, vehicle_type) {
     const timeInSeconds = route_data.route.time;
     const timeInMinutes = Math.floor(timeInSeconds / 60);
     const huellaCarbonoViaje = (distance * huellaCarbono[vehicle_type]).toFixed(2);
+    const costoEstimado = (distance * 6.17).toFixed(2);
+
 
     const search_params = new URLSearchParams({
         key: key,
@@ -140,6 +142,7 @@ async function find_charging_stations(origin, destination, vehicle_type) {
         destination: destination,
         distance: distance,
         timeInMinutes: timeInMinutes,
+        costoEstimado: costoEstimado,
         huellaCarbonoViaje: huellaCarbonoViaje,
         informacionConductor: informacionConductor,
         informacionVehiculo: informacionVehiculo
@@ -152,6 +155,7 @@ function updateUI(data) {
     document.querySelector('[data-info="destination"]').textContent = data.destination;
     document.querySelector('[data-info="distance"]').textContent = data.distance;
     document.querySelector('[data-info="timeInMinutes"]').textContent = data.timeInMinutes > 59 ? `${Math.floor(data.timeInMinutes / 60)} horas, ${data.timeInMinutes % 60} minutos` : `${data.timeInMinutes} minutos`;
+    document.querySelector('[data-info="estimatedCost"]').textContent = `${data.costoEstimado}`;
     document.querySelector('[data-info="carbonFootprint"]').textContent = data.huellaCarbonoViaje;
     document.querySelector('[data-info="driverName"]').textContent = data.informacionConductor.nombre;
     document.querySelector('[data-info="driverPhoto"]').src = data.informacionConductor.foto;
