@@ -666,10 +666,6 @@ footer{
         font-size: 14px; /* Reduce el tamaño de la fuente base */
     }
 
-    .topnav, .menu {
-        flex-direction: column; /* Cambia la dirección de las barras de navegación */
-    }
-
     .nombre__apellido, .presentacion, .carrera {
         font-size: 1.5em; /* Reduce el tamaño de la fuente para adaptarse a pantallas más pequeñas */
     }
