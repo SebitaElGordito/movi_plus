@@ -640,44 +640,6 @@ footer{
         font-size: 23px;
     }
 
-    .cv__btn{
-        font-size: 15px;
-        width: 75%;
-    }
-
-    .habilidades{
-        display: flex;
-        flex-direction: column;
-        font-size: 0.8em;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .skills__bar{
-    width: 110px;
-    }
-
-    .skills__bar::after{
-    content: "";
-    width: 110px;
-    left: -110px;
-    }
-
-
-
-    .proyecto{
-        margin: 0 auto;
-    }
-
-    .proyectos__contenido{
-        width: 100%;
-    }
-
-    .img__proyectos{
-        height: 60%;
-        width: 60%;
-    }
-
 
     .contacto{
         width: 90%;
@@ -756,5 +718,58 @@ footer{
 
     .calculadora_viajes {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #titulo_calc{
+        font-size: 2em;
+    }
+    
+    #map { 
+        min-width: 290px;
+        min-height: 320px;
+    }
+    
+    .calcular_viaje{
+        font-size: 15px;
+    }
+
+    #foto {
+        width: 40%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-viaje, .info-conductor, .info-vehiculo {
+        width: 90%;
+    }
+    
+   
+    .info-viaje h2, .info-conductor h2, .info-vehiculo h2 {
+        color: #000000;
+        font-size: 18px;
+    }
+    
+    .info-viaje p, .info-conductor p, .info-vehiculo p {
+        font-size: 14px;
+        color: #141414;
+    }
+
+    .contacto{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacto__formulario{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .titulo__home-contacto{
+        width: 80%;
     }
 }
